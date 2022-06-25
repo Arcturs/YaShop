@@ -1,0 +1,22 @@
+spring:
+  main:
+    allow-circular-references: true
+
+  liquibase:
+    change-log: classpath:db/changelog/changelog-current.xml
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      show_sql: true
+      format_sql: true
+      use_sql_comments: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
