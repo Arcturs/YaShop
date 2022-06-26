@@ -33,7 +33,6 @@ public class SwaggerConfiguration {
                                 .email("yaninastya2010@yandex.ru")
                         )
                 )
-                .servers(List.of(new Server().url("/").description("default"),
-                        new Server().url("https://sir-1826.usr.yandex-academy.ru").description("for testing")));
+                .servers(List.of(new Server().url("/").description("default")));
     }
 }
