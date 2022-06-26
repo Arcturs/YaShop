@@ -3,9 +3,12 @@ package ru.vrn.vsu.csf.asashina.yandexproject.configuration;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.servers.Server;
 import org.springdoc.core.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class SwaggerConfiguration {
@@ -29,6 +32,11 @@ public class SwaggerConfiguration {
                                 .name("Anastasiya Sashina")
                                 .email("yaninastya2010@yandex.ru")
                         )
-                );
+                )
+                .servers(List.of(new Server().url("http://localhost:80"),
+                        new Server().url("https://localhost:80"),
+                        new Server().url("https://localhost:80"),
+                        new Server().url("https://sir-1826.usr.yandex-academy.ru"),
+                        new Server().url("http://sir-1826.usr.yandex-academy.ru")));
     }
 }
