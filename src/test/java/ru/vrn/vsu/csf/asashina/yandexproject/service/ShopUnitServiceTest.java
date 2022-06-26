@@ -21,8 +21,6 @@ import ru.vrn.vsu.csf.asashina.yandexproject.model.response.ShopUnitStaticUnit;
 import ru.vrn.vsu.csf.asashina.yandexproject.repository.ShopUnitRepository;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -54,7 +52,7 @@ class ShopUnitServiceTest {
     @Test
     void getsShopUnitByIdForOffer() {
         // given
-        var id = UUID.fromString( "96c9915e-3c09-430f-a314-7774697eeab5");
+        var id = UUID.fromString("96c9915e-3c09-430f-a314-7774697eeab5");
         var shopUnit = new ShopUnit(1L, id, "shopUnit1", Instant.parse("2022-02-02T12:00:00.000Z"),
                 null, null, ShopUnitType.OFFER, 350L, null);
 

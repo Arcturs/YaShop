@@ -7,15 +7,11 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.vrn.vsu.csf.asashina.yandexproject.converter.ShopUnitConverter;
 import ru.vrn.vsu.csf.asashina.yandexproject.model.entity.ArchiveShopUnit;
 import ru.vrn.vsu.csf.asashina.yandexproject.model.entity.ShopUnit;
-import ru.vrn.vsu.csf.asashina.yandexproject.model.response.ShopUnitStaticResponse;
 import ru.vrn.vsu.csf.asashina.yandexproject.model.response.ShopUnitStaticUnit;
 import ru.vrn.vsu.csf.asashina.yandexproject.repository.ArchiveShopUnitRepository;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -39,7 +35,7 @@ public class ArchiveShopUnitService {
         return archive.isEmpty()
                 ? null
                 : archive.stream()
-                    .map(shopUnitConverter::toShopUnitStaticUnitFromArchive)
-                    .toList();
+                .map(shopUnitConverter::toShopUnitStaticUnitFromArchive)
+                .toList();
     }
 }

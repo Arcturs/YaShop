@@ -13,7 +13,6 @@ import ru.vrn.vsu.csf.asashina.yandexproject.model.request.ShopUnitImport;
 import ru.vrn.vsu.csf.asashina.yandexproject.model.response.ShopUnitStaticUnit;
 
 import java.time.Instant;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;

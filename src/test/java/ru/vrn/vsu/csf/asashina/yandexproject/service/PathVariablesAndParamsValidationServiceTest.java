@@ -7,7 +7,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import ru.vrn.vsu.csf.asashina.yandexproject.exception.validation.DateFormatException;
 
 import java.time.Instant;
-import java.util.Date;
 import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

@@ -5,11 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.vrn.vsu.csf.asashina.yandexproject.model.dto.ShopUnitDTO;
 import ru.vrn.vsu.csf.asashina.yandexproject.model.enumeration.ShopUnitType;
 
 import java.time.Instant;
-import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 

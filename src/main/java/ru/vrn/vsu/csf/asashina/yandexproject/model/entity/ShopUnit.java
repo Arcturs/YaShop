@@ -6,7 +6,6 @@ import ru.vrn.vsu.csf.asashina.yandexproject.model.enumeration.ShopUnitType;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;

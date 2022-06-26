@@ -14,10 +14,10 @@ import java.util.UUID;
 public interface ArchiveShopUnitRepository extends JpaRepository<ArchiveShopUnit, Long> {
 
     @Query(value = """
-                SELECT *
-                FROM archive_shop_unit
-                WHERE id = :id
-                  AND date >= :dateStart AND date < :dateEnd""", nativeQuery = true)
+            SELECT *
+            FROM archive_shop_unit
+            WHERE id = :id
+              AND date >= :dateStart AND date < :dateEnd""", nativeQuery = true)
     List<ArchiveShopUnit> getArchiveByIdInDateRange(@Param("id") UUID id,
                                                     @Param("dateStart") Instant dateStart,
                                                     @Param("dateEnd") Instant dateEnd);

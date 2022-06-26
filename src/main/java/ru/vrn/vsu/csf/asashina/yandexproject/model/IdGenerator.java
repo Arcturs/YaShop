@@ -2,7 +2,6 @@ package ru.vrn.vsu.csf.asashina.yandexproject.model;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
-import org.hibernate.id.IdentityGenerator;
 import org.hibernate.id.UUIDGenerator;
 
 import java.io.Serializable;

@@ -6,7 +6,7 @@ public enum ShopUnitType {
 
     private final String code;
 
-    ShopUnitType (String code) {
+    ShopUnitType(String code) {
         this.code = code;
     }
 

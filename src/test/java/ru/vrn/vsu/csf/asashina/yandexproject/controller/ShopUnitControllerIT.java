@@ -21,7 +21,6 @@ import ru.vrn.vsu.csf.asashina.yandexproject.repository.ShopUnitRepository;
 import ru.vrn.vsu.csf.asashina.yandexproject.repository.ShopUnitTreeRepository;
 import ru.vrn.vsu.csf.asashina.yandexproject.service.ShopUnitService;
 
-import java.sql.Date;
 import java.time.Instant;
 import java.util.*;
 
@@ -90,8 +89,8 @@ class ShopUnitControllerIT {
         var shopUnit8 = new ShopUnit(8L, UUID.fromString("73bc3b36-02d1-4245-ab35-3106c9ee1c65"),
                 "Goldstar 65\" LED UHD LOL Very Smart", Instant.parse("2022-02-03T15:00:00.000Z"),
                 shopUnit5.getId(), shopUnit5, ShopUnitType.OFFER, 69999L, new HashSet<>());
-        shopUnitService.saveAllShopUnitsToDBTreeAndArchive(List.of(shopUnit1, shopUnit2, shopUnit3, shopUnit4, shopUnit5, shopUnit6, shopUnit7,
-                shopUnit8));
+        shopUnitService.saveAllShopUnitsToDBTreeAndArchive(List.of(shopUnit1, shopUnit2, shopUnit3, shopUnit4,
+                shopUnit5, shopUnit6, shopUnit7, shopUnit8));
 
         // when
         ResponseEntity<String> response = testRestTemplate.getForEntity("/nodes/069cb8d7-bbdd-47d3-ad8f-82ef4c269df1",
@@ -303,7 +302,7 @@ class ShopUnitControllerIT {
         shopUnitService.saveAllShopUnitsToDBTreeAndArchive(List.of(shopUnit1, shopUnit2, shopUnit3));
 
         var archiveShopUnit21 = new ArchiveShopUnit(4L, shopUnit2.getShopUnitId(), shopUnit2.getId(),
-                "smartphones",Instant.parse("2022-02-03T14:45:00.000Z"), shopUnit1.getId(),
+                "smartphones", Instant.parse("2022-02-03T14:45:00.000Z"), shopUnit1.getId(),
                 shopUnit2.getUnitType(), shopUnit2.getPrice());
         var archiveShopUnit31 = new ArchiveShopUnit(5L, shopUnit3.getShopUnitId(), shopUnit3.getId(),
                 shopUnit3.getName(), Instant.parse("2022-02-03T14:45:00.000Z"), shopUnit2.getId(),
@@ -473,7 +472,7 @@ class ShopUnitControllerIT {
         // then
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(jdbcTemplate.queryForObject("SELECT EXISTS(SELECT 1 FROM shop_unit WHERE id = '069cb8d7-bbdd-47d3-ad8f-82ef4c269df1')",
-                        Boolean.class), true);
+                Boolean.class), true);
     }
 
     @Test

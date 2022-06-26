@@ -20,8 +20,6 @@ import ru.vrn.vsu.csf.asashina.yandexproject.model.response.ShopUnitStaticRespon
 import ru.vrn.vsu.csf.asashina.yandexproject.repository.ShopUnitRepository;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -36,6 +34,8 @@ public class ShopUnitService {
     private final PathVariablesAndParamsValidationService pathVariablesAndParamsValidationService;
 
     private final ShopUnitConverter shopUnitConverter = Mappers.getMapper(ShopUnitConverter.class);
+
+    private final static int DAY_IN_SECONDS = 24 * 60 * 60;
 
     public ShopUnitDTO getShopUnitById(UUID id) {
         var entity = findEntityById(id);
@@ -142,12 +142,12 @@ public class ShopUnitService {
     }
 
     public ShopUnitStaticResponse getLatestStatisticsOnOffers(Instant date) {
-        List<ShopUnit> offers = shopUnitRepository.getLastUpdatedOffers(date.minusSeconds(24 * 60 * 60), date);
+        List<ShopUnit> offers = shopUnitRepository.getLastUpdatedOffers(date.minusSeconds(DAY_IN_SECONDS), date);
         return new ShopUnitStaticResponse(offers.isEmpty()
                 ? new ArrayList<>()
                 : offers.stream()
-                        .map(shopUnitConverter::toShopUnitStaticUnitFromShopUnit)
-                        .toList());
+                .map(shopUnitConverter::toShopUnitStaticUnitFromShopUnit)
+                .toList());
     }
 
     public ShopUnitStaticResponse getNodeStatisticsForEntityById(UUID id, Instant dateStart, Instant dateEnd) {

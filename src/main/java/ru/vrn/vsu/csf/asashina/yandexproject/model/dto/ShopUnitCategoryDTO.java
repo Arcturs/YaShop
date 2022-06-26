@@ -8,6 +8,6 @@ import java.util.Set;
 
 @Getter
 @Setter
-public class ShopUnitCategoryDTO extends ShopUnitDTO{
+public class ShopUnitCategoryDTO extends ShopUnitDTO {
     private Set<ShopUnitDTO> children = new HashSet<>();
 }
